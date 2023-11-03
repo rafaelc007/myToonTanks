@@ -42,6 +42,9 @@ private:
 	UPROPERTY(EditDefaultsOnly, Category="Particles")
 	UParticleSystem* ExplodeParticle;
 
+	UPROPERTY(EditDefaultsOnly, Category="Sound")
+	USoundBase* DeathSound;
+
 protected:
 	void RotateTurret(FVector lookAtTarget);
 

@@ -38,6 +38,12 @@ private:
 	UPROPERTY(EditDefaultsOnly, Category="Particles")
 	class UParticleSystemComponent* SmokeTrail;
 
+	UPROPERTY(EditDefaultsOnly, Category="Sounds")
+	USoundBase* LaunchSound;
+
+	UPROPERTY(EditDefaultsOnly, Category="Sounds")
+	USoundBase* HitSound;
+
 	UFUNCTION()
 	void OnHit(
 		UPrimitiveComponent* HitComp,

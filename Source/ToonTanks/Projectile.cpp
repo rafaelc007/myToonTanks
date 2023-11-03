@@ -26,6 +26,7 @@ void AProjectile::BeginPlay()
 
 	// Bound OnHit to be called on hit events
 	BaseMesh->OnComponentHit.AddDynamic(this, &AProjectile::OnHit);
+	if (LaunchSound) UGameplayStatics::PlaySoundAtLocation(this, LaunchSound, GetActorLocation());
 }
 
 // Called every frame
@@ -57,6 +58,7 @@ void AProjectile::OnHit(
 			if (HitParticles)
 			{
 				UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), this->HitParticles, OtherActor->GetActorTransform());
+				if (HitSound) UGameplayStatics::PlaySoundAtLocation(this, HitSound, owner->GetActorLocation());
 			}
 			Destroy();
 		}
