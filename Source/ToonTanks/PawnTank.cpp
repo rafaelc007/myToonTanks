@@ -87,10 +87,16 @@ APlayerController* APawnTank::GetTankPlayerController() const
     return mPlayerControllerRef;
 }
 
+bool APawnTank::IsAlive() const
+{
+    return this->bIsAlive;
+}
+
 void APawnTank::HandleDestruction()
 {
     Super::HandleDestruction();
     // Don't destroy, otherwise the camera will be destroyed
     SetActorHiddenInGame(true);
     SetActorTickEnabled(false);
+    bIsAlive = false;
 }

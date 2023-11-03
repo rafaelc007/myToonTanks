@@ -32,6 +32,8 @@ public:
 
 	void HandleDestruction();
 
+	bool IsAlive() const;
+
 	APlayerController* GetTankPlayerController() const;
 
 private:
@@ -46,6 +48,8 @@ private:
 
 	UPROPERTY(EditDefaultsOnly, Category="Movement")
 	float mTurnRate;
+
+	bool bIsAlive {true};
 
 	void Move(float);
 	void Turn(float);
