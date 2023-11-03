@@ -39,6 +39,9 @@ private:
 	UPROPERTY(EditDefaultsOnly, Category="Combat")
 	TSubclassOf<class AProjectile> ProjectileClass;
 
+	UPROPERTY(EditDefaultsOnly, Category="Particles")
+	UParticleSystem* ExplodeParticle;
+
 protected:
 	void RotateTurret(FVector lookAtTarget);
 

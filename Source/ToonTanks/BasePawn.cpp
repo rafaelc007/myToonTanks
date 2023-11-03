@@ -56,5 +56,8 @@ void ABasePawn::Fire()
 
 void ABasePawn::HandleDestruction()
 {
-	// TODO: visual / sound effects
+	if (this->ExplodeParticle)
+	{
+		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), this->ExplodeParticle, this->GetActorTransform());
+	}
 }
