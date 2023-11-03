@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include "PawnTank.h"
 #include "PawnTower.h"
+#include "PawnTank.h"
 #include "TimerManager.h"
 #include "Kismet/GameplayStatics.h"
 
@@ -50,7 +50,8 @@ void APawnTower::AimTarget()
 
 void APawnTower::CheckFireConditions()
 {
-    if (InFireRange())
+    if (mTarget == nullptr) return;
+    if (InFireRange() && mTarget->IsAlive())
     {
         Fire();
     }
