@@ -32,6 +32,9 @@ private:
 	UPROPERTY(EditDefaultsOnly, Category="Damage")
 	float DamageAmount = 5.f;
 
+	UPROPERTY(EditDefaultsOnly, Category="Damage")
+	class UParticleSystem* HitParticles;
+
 	UFUNCTION()
 	void OnHit(
 		UPrimitiveComponent* HitComp,
@@ -40,5 +43,4 @@ private:
 		FVector NormalImpulse,
 		const FHitResult& hit
 	);
-
 };
