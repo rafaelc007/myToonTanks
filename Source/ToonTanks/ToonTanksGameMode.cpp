@@ -64,8 +64,6 @@ int32 AToonTanksGameMode::GetTargetTowerCount()
     TArray<AActor*> allTowers;
     UGameplayStatics::GetAllActorsOfClass(this, APawnTower::StaticClass(), allTowers);
 
-    UE_LOG(LogTemp, Warning, TEXT("Found %d towers"), allTowers.Num());
-
     return allTowers.Num();
 }
 
