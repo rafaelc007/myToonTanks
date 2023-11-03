@@ -32,8 +32,11 @@ private:
 	UPROPERTY(EditDefaultsOnly, Category="Damage")
 	float DamageAmount = 5.f;
 
-	UPROPERTY(EditDefaultsOnly, Category="Damage")
-	class UParticleSystem* HitParticles;
+	UPROPERTY(EditDefaultsOnly, Category="Particles")
+	UParticleSystem* HitParticles;
+
+	UPROPERTY(EditDefaultsOnly, Category="Particles")
+	class UParticleSystemComponent* SmokeTrail;
 
 	UFUNCTION()
 	void OnHit(

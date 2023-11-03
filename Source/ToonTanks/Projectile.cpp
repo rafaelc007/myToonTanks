@@ -4,6 +4,7 @@
 #include "Projectile.h"
 #include "Kismet/GameplayStatics.h"
 #include "GameFramework/ProjectileMovementComponent.h"
+#include "Particles/ParticleSystemComponent.h"
 
 // Sets default values
 AProjectile::AProjectile()
@@ -14,6 +15,8 @@ AProjectile::AProjectile()
 	this->RootComponent = BaseMesh;
 
 	this->ProjectileMover = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("ProjectileMover"));
+	this->SmokeTrail = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("SmokeTrail"));
+	SmokeTrail->SetupAttachment(BaseMesh);
 }
 
 // Called when the game starts or when spawned
