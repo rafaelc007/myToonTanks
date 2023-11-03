@@ -44,6 +44,9 @@ private:
 	UPROPERTY(EditDefaultsOnly, Category="Sounds")
 	USoundBase* HitSound;
 
+	UPROPERTY(EditDefaultsOnly, Category="Camera")
+	TSubclassOf<UCameraShakeBase> HitCameraShakeClass;
+
 	UFUNCTION()
 	void OnHit(
 		UPrimitiveComponent* HitComp,

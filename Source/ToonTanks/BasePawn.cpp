@@ -56,12 +56,12 @@ void ABasePawn::Fire()
 
 void ABasePawn::HandleDestruction()
 {
-	if (this->ExplodeParticle)
-	{
-		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), this->ExplodeParticle, this->GetActorTransform());
-	}
-	if (this->DeathSound)
-	{
-		UGameplayStatics::PlaySoundAtLocation(this, DeathSound, this->GetActorLocation());
-	}
+	if (this->ExplodeParticle) UGameplayStatics::SpawnEmitterAtLocation(
+		GetWorld(),
+		this->ExplodeParticle,
+		this->GetActorTransform());
+
+	if (this->DeathSound) UGameplayStatics::PlaySoundAtLocation(this, DeathSound, this->GetActorLocation());
+
+	if (DeathCameraShakeClass) GetWorld()->GetFirstPlayerController()->ClientStartCameraShake(DeathCameraShakeClass);
 }

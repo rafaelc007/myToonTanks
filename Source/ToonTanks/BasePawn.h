@@ -45,6 +45,9 @@ private:
 	UPROPERTY(EditDefaultsOnly, Category="Sound")
 	USoundBase* DeathSound;
 
+	UPROPERTY(EditDefaultsOnly, Category="Camera")
+	TSubclassOf<UCameraShakeBase> DeathCameraShakeClass;
+
 protected:
 	void RotateTurret(FVector lookAtTarget);
 
